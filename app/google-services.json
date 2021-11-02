@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1064076789241",
+    "project_id": "workbucket-psi",
+    "storage_bucket": "workbucket-psi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064076789241:android:cdf777e57c487788152928",
+        "android_client_info": {
+          "package_name": "com.ziyad.workbucket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064076789241-58vm8iihn4g18lb6tfps5gdh66c84d26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB16M4kYkWvb-4fFnW20vBl3OcY9vIDizY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064076789241-58vm8iihn4g18lb6tfps5gdh66c84d26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
