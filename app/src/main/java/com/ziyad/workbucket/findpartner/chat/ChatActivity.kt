@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ziyad.workbucket.chat
+package com.ziyad.workbucket.findpartner.chat
 
-import android.content.Intent
+import android.content.Context
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ProgressBar
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.AuthUI.IdpConfig.*
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
@@ -36,15 +37,17 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.ziyad.workbucket.R
-import com.ziyad.workbucket.chat.*
-import com.ziyad.workbucket.chat.model.FriendlyMessage
 import com.ziyad.workbucket.databinding.ActivityChatBinding
+import com.ziyad.workbucket.findpartner.chat.*
+import com.ziyad.workbucket.findpartner.chat.model.FriendlyMessage
+import com.ziyad.workbucket.mainviewmodel.MainViewModel
 
-
+//category!!
 class ChatActivity : AppCompatActivity() {
+    private lateinit var container: SharedPreferences
     private lateinit var binding: ActivityChatBinding
     private lateinit var manager: LinearLayoutManager
-
+    private val viewModel: MainViewModel by viewModels()
     // Firebase instance variables
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
@@ -56,12 +59,13 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        container = getSharedPreferences("KeyShared", Context.MODE_PRIVATE)
+        /*viewModel = ViewModelProvider(this).get(FindPartnerViewModel::class.java)*/
         // This codelab uses View Binding
         // See: https://developer.android.com/topic/libraries/view-binding
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val category=container.getString("CATEGORY","messages")
         // When running in debug mode, connect to the Firebase Emulator Suite
         // "10.0.2.2" is a special value which allows the Android emulator to
         // connect to "localhost" on the host computer. The port values are
@@ -70,17 +74,20 @@ class ChatActivity : AppCompatActivity() {
 
         // Initialize Firebase Auth and check if the user is signed in
         auth = Firebase.auth
-        if (auth.currentUser == null) {
+        /*if (auth.currentUser == null) {
             // Not signed in, launch the Sign In activity
             startActivity(Intent(this, SignInActivity::class.java))
             finish()
             return
-        }
-
-        // Initialize Realtime Database
+        }*/
         db = Firebase.database
-        val messagesRef = db.reference.child(MESSAGES_CHILD)
+        /*viewModel.category.observe(this, {
 
+
+        })*/
+        // Initialize Realtime Database
+
+        val messagesRef = db.reference.child(category!!)
         // The FirebaseRecyclerAdapter class and options come from the FirebaseUI library
         // See: https://github.com/firebase/FirebaseUI-Android
         val options = FirebaseRecyclerOptions.Builder<FriendlyMessage>()
@@ -111,7 +118,7 @@ class ChatActivity : AppCompatActivity() {
                 getPhotoUrl(),
                 null
             )
-            db.reference.child(MESSAGES_CHILD).push().setValue(friendlyMessage)
+            db.reference.child(category!!).push().setValue(friendlyMessage)
             binding.messageEditText.setText("")
         }
 
@@ -119,17 +126,11 @@ class ChatActivity : AppCompatActivity() {
         binding.addMessageImageView.setOnClickListener {
             openDocument.launch(arrayOf("image/*"))
         }
-    }
-
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in.
-        if (auth.currentUser == null) {
-            // Not signed in, launch the Sign In activity
-            startActivity(Intent(this, SignInActivity::class.java))
+        binding.btnBack.setOnClickListener {
             finish()
-            return
         }
+        binding.tvCategory.text = category!!
+
     }
 
     public override fun onPause() {
@@ -151,7 +152,6 @@ class ChatActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.sign_out_menu -> {
-                signOut()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -162,8 +162,9 @@ class ChatActivity : AppCompatActivity() {
         Log.d(TAG, "Uri: $uri")
         val user = auth.currentUser
         val tempMessage = FriendlyMessage(null, getUserName(), getPhotoUrl(), LOADING_IMAGE_URL)
+        val category=container.getString("CATEGORY","messages")
         db.reference
-            .child(MESSAGES_CHILD)
+            .child(category!!)
             .push()
             .setValue(
                 tempMessage,
@@ -188,6 +189,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun putImageInStorage(storageReference: StorageReference, uri: Uri, key: String?) {
         // First upload the image to Cloud Storage
+        val category=container.getString("CATEGORY","messages")
         storageReference.putFile(uri)
             .addOnSuccessListener(
                 this
@@ -198,7 +200,7 @@ class ChatActivity : AppCompatActivity() {
                         val friendlyMessage =
                             FriendlyMessage(null, getUserName(), getPhotoUrl(), uri.toString())
                         db.reference
-                            .child(MESSAGES_CHILD)
+                            .child(category!!)
                             .child(key!!)
                             .setValue(friendlyMessage)
                     }
@@ -210,12 +212,6 @@ class ChatActivity : AppCompatActivity() {
                     e
                 )
             }
-    }
-
-    private fun signOut() {
-        AuthUI.getInstance().signOut(this)
-        startActivity(Intent(this, SignInActivity::class.java))
-        finish()
     }
 
     private fun getPhotoUrl(): String? {
@@ -232,7 +228,7 @@ class ChatActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
-        const val MESSAGES_CHILD = "messages"
+
         const val ANONYMOUS = "anonymous"
         private const val LOADING_IMAGE_URL = "https://www.google.com/images/spin-32.gif"
     }

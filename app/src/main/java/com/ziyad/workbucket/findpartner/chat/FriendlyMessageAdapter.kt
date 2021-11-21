@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ziyad.workbucket.chat
+package com.ziyad.workbucket.findpartner.chat
 
 import android.graphics.Color
 import android.util.Log
@@ -28,10 +28,10 @@ import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.ziyad.workbucket.R
-import com.ziyad.workbucket.chat.ChatActivity.Companion.ANONYMOUS
-import com.ziyad.workbucket.chat.model.FriendlyMessage
 import com.ziyad.workbucket.databinding.ImageMessageBinding
 import com.ziyad.workbucket.databinding.MessageBinding
+import com.ziyad.workbucket.findpartner.chat.ChatActivity.Companion.ANONYMOUS
+import com.ziyad.workbucket.findpartner.chat.model.FriendlyMessage
 
 // The FirebaseRecyclerAdapter class and options come from the FirebaseUI library
 // See: https://github.com/firebase/FirebaseUI-Android

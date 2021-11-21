@@ -9,8 +9,18 @@
     <color name="white">#FFFFFFFF</color>
     <color name="semi_brown">#FFCC9B6D</color>
     <color name="cream">#FFF1CA89</color>
+    <color name="cream_30">#FFF1CA89</color>
     <color name="light_cream">#FFFFEE93</color>
     <color name="light_purple">#FFF2DAC3</color>
     <color name="dark_purple">#FFC8C2BC</color>
     <color name="blue">#FF00a6e3</color>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorPrimaryDark">#E65100</color>
+    <color name="colorAccent">#2E7D32</color>
+    <color name="colorTitle">#ffffff</color>
+    <color name="colorLightGray">#ececec</color>
+    <color name="colorGray">#dedede</color>
+    <color name="colorDarkGray">#b4b4b4</color>
+    <color name="colorBlue">#2962FF</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

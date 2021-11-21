@@ -1,9 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".findpartner.view.FindPartnerFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bahanmentah"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/bahanmentah"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Produksi Bahan Mentah"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Barang input atau persediaan yang dibutuhkan perusahaan untuk memproduksi produknya"
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_weight="1"
+                    android:id="@+id/perdagangankecil"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/dagangkecil"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Perdagangan Kecil"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bisnis yang dijalankan kurang dari 50 orang atau memiliki kekayaan bersih paling banyak Rp. 200.000.000,00."
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/finansial"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/finansial"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Finansial"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bisnis yang bergerak dalam bidang keuangan, seperti mengelola keuangan."
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/teknologi"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/it"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teknologi"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Penjualan alat-alat IT, pembuatan aplikasi yang digunakan untuk meningkatkan bisnis commercial lainnya."
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/jasa"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/jasa"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jasa"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bisnis yang menyediakan atau menjual suatu keterampilan yang dibutuhkan di kalangan masyarakat. "
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/konstruksi"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/konstruksi"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Konstruksi"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Segmentasinya terdiri dari konstruksi real estat, pembangunan infrastruktur, dan konstruksi industri."
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pertanian"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/pertanian"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pertanian"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bidang usaha yang meliputi pertanian dan kegiatan komersial yang berhubungan dengan pertanian."
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/transportasi"
+                    android:layout_weight="1"
+                    android:layout_margin="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="99dp"
+                            android:src="@drawable/transportasi"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transportasi"
+                            android:textSize="16dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bisnis apa pun yang memiliki andil dalam mengangkut orang atau barang. "
+                            android:textSize="10dp"
+                            android:layout_margin="8dp"
+                            >
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </FrameLayout>

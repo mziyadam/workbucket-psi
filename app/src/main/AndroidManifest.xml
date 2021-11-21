@@ -6,19 +6,24 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="Workbucket"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkBucket">
-        <activity android:name=".login.Login"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".home.HomeActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".findpartner.chat.ChatActivity" />
+
     </application>
 
 </manifest>

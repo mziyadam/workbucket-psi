@@ -1,13 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".setting.view.SettingFragment">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical"
+        >
+<androidx.cardview.widget.CardView
+    app:cardElevation="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<ImageView
+
+    android:padding="18dp"
+    android:layout_width="wrap_content"
+    android:src="@drawable/ic_account_circle_black_36dp"
+    android:layout_height="wrap_content">
+
+</ImageView>
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+
+            android:padding="21dp"
+            android:textSize="18dp"
+            android:textColor="@color/black">
+
+        </TextView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="12dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama : "
+                    android:paddingVertical="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="18dp"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+
+                    android:textSize="14dp">
+
+                </EditText>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="12dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email : "
+                    android:paddingVertical="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="18dp"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <EditText
+
+                    android:id="@+id/et_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Haven't been added yet"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+
+                    android:textSize="14dp">
+
+                </EditText>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="12dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Password : "
+                    android:paddingVertical="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="18dp"
+                    android:textColor="@color/black">
+
+                </TextView>
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:hint="masukkan password baru"
+                    android:inputType="textPassword"
+                    android:paddingEnd="18dp"
+                    android:textSize="14dp"
+
+                    android:textColor="@color/black">
+
+                </EditText>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="12dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reenter New Password : "
+                    android:paddingVertical="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="18dp"
+                    android:textColor="@color/black">
+
+                </TextView>
+                <EditText
+                    android:id="@+id/et_reenter_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:hint="masukkan password"
+                    android:inputType="textPassword"
+                    android:paddingEnd="18dp"
+                    android:textSize="14dp"
+
+                    android:textColor="@color/black">
+
+                </EditText>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_marginVertical="12dp"
+                android:layout_marginStart="21dp"
+                android:background="@color/semi_brown"
+                android:textColor="@color/white"
+                android:text="Save changes"/>
+            <Space
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </Space>
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:padding="12dp"
+
+                android:layout_marginVertical="12dp"
+                android:layout_marginEnd="21dp"
+                android:background="@color/semi_brown"
+                android:textColor="@color/white"
+                android:text="Logout"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Space>
+
+
+
+
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

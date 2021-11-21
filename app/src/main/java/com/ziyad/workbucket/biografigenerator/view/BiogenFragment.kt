@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
 import com.ziyad.workbucket.biografigenerator.viewmodel.BiogenViewModel
 import com.ziyad.workbucket.databinding.BiogenFragmentBinding
 
@@ -26,6 +27,17 @@ class BiogenFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(BiogenViewModel::class.java)
         // TODO: Use the ViewModel
+
+
+
+        viewModel.email.observe(viewLifecycleOwner, Observer {
+            if(it.toString().equals("")){
+                val user = FirebaseAuth.getInstance().currentUser!!
+                binding.etEmail.setText(user.email.toString())
+            }else {
+                binding.etEmail.setText(it.toString())
+            }
+        })
         viewModel.nama.observe(viewLifecycleOwner, Observer {
             binding.nama.setText(it.toString())
         })
@@ -42,12 +54,18 @@ class BiogenFragment : Fragment() {
             viewModel.generateParagraf(
                 binding.nama.text.toString(),
                 binding.etNim.text.toString(),
-                binding.etKelas.text.toString()
+                binding.etKelas.text.toString(),
+                binding.etEmail.text.toString()
             )
             binding.paragraf.text = viewModel.paragraf.value
         }
         binding.resetBtn.setOnClickListener { viewModel.clear() }
         binding.copyBtn.setOnClickListener { viewModel.copyToClipboard(requireActivity(), requireContext()) }
+        binding.translateBtn.setOnClickListener {
+viewModel.translate(requireContext())
+        }
+
+
     }
 
 }

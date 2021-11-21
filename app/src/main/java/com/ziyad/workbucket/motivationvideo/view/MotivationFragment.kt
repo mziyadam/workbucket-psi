@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.ziyad.workbucket.databinding.MotivationFragmentBinding
@@ -15,13 +16,15 @@ class MotivationFragment : Fragment() {
 
 private lateinit var binding: MotivationFragmentBinding
     private lateinit var viewModel: MotivationViewModel
-
+private lateinit var link1: WebView
+private lateinit var link2: WebView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = MotivationFragmentBinding.inflate(layoutInflater)
         return binding.root
+
 
     }
 
