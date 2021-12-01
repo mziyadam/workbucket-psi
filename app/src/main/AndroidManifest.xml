@@ -11,7 +11,7 @@
         android:label="Workbucket"
         android:largeHeap="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkBucket">
         <activity android:name=".home.HomeActivity"
