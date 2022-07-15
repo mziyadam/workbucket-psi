@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="#">
-    ![image](https://user-images.githubusercontent.com/64635497/179278573-ec67389f-b479-492c-a862-2325422859bd.png)
+    <img src="https://user-images.githubusercontent.com/64635497/179278573-ec67389f-b479-492c-a862-2325422859bd.png">
   </a>
 </p>
 <br>
@@ -34,7 +34,7 @@ Application that provides venture features such as discussion, introduction gene
 2. Internet connection
   
 # Installation
-1. Download the APK 
+1. Download the [APK](https://drive.google.com/file/d/1p4llksCbswZh5_hzkahZ4VKTPQHpY1U3/view?usp=sharing)
 2. Install the APK
 
 # Built With
